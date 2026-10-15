@@ -1,0 +1,35 @@
+{
+    "meta": {
+        "title": "Tropic Rent a Car · Car hire in Tenerife",
+        "description": "Hire a car in Tenerife with Tropic Rent a Car. Clear prices, insurance included and direct service."
+    },
+    "nav": {
+        "fleet": "Fleet",
+        "contact": "Contact"
+    },
+    "footer": {
+        "rights": "Autos Tropic Canarias S.L."
+    },
+    "search": {
+        "title": "Book your car",
+        "pickupPlace": "Pick-up location",
+        "returnPlace": "Return location",
+        "sameAsPickup": "Same as pick-up",
+        "pickupDate": "Pick-up date",
+        "pickupTime": "Pick-up time",
+        "returnDate": "Return date",
+        "returnTime": "Return time",
+        "submit": "See cars and prices",
+        "errorOrder": "The return must be after the pick-up.",
+        "places": {
+            "office": "Costa del Silencio office",
+            "airportSouth": "Tenerife South Airport",
+            "airportNorth": "Tenerife North Airport",
+            "hotel": "Hotel or accommodation"
+        }
+    },
+    "hero": {
+        "title": "Your car in Tenerife, no surprises",
+        "lead": "Full-risk insurance included, no card hold and the total price before you ask."
+    }
+}
