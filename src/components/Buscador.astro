@@ -1,0 +1,138 @@
+---
+import { getDictionary, localizedPath, type Locale } from "../i18n/utils";
+
+interface Props {
+    lang: Locale;
+}
+const { lang } = Astro.props;
+const s = getDictionary(lang).search;
+const lugares = [
+    ["office", s.places.office],
+    ["airportSouth", s.places.airportSouth],
+    ["airportNorth", s.places.airportNorth],
+    ["hotel", s.places.hotel],
+] as const;
+const horas = Array.from(
+    { length: 48 },
+    (_, i) =>
+        `${String(Math.floor(i / 2)).padStart(2, "0")}:${i % 2 ? "30" : "00"}`,
+);
+---
+
+<form
+    class="buscador"
+    method="get"
+    action={localizedPath(lang, "resultados")}
+    data-buscador
+    novalidate
+>
+    <h2>{s.title}</h2>
+    <div class="rejilla">
+        <div class="campo ancho">
+            <label for="recogida-lugar">{s.pickupPlace}</label>
+            <select id="recogida-lugar" name="lugar_recogida" required>
+                {
+                    lugares.map(([valor, texto]) => (
+                        <option value={valor}>{texto}</option>
+                    ))
+                }
+            </select>
+        </div>
+        <div class="campo ancho">
+            <label for="devolucion-lugar">{s.returnPlace}</label>
+            <select id="devolucion-lugar" name="lugar_devolucion">
+                <option value="">{s.sameAsPickup}</option>
+                {
+                    lugares.map(([valor, texto]) => (
+                        <option value={valor}>{texto}</option>
+                    ))
+                }
+            </select>
+        </div>
+        <div class="campo">
+            <label for="recogida-fecha">{s.pickupDate}</label>
+            <input
+                id="recogida-fecha"
+                name="fecha_recogida"
+                type="date"
+                required
+            />
+        </div>
+        <div class="campo">
+            <label for="recogida-hora">{s.pickupTime}</label>
+            <select id="recogida-hora" name="hora_recogida" required>
+                {
+                    horas.map((h) => (
+                        <option value={h} selected={h === "10:00"}>
+                            {h}
+                        </option>
+                    ))
+                }
+            </select>
+        </div>
+        <div class="campo">
+            <label for="devolucion-fecha">{s.returnDate}</label>
+            <input
+                id="devolucion-fecha"
+                name="fecha_devolucion"
+                type="date"
+                required
+            />
+        </div>
+        <div class="campo">
+            <label for="devolucion-hora">{s.returnTime}</label>
+            <select id="devolucion-hora" name="hora_devolucion" required>
+                {
+                    horas.map((h) => (
+                        <option value={h} selected={h === "10:00"}>
+                            {h}
+                        </option>
+                    ))
+                }
+            </select>
+        </div>
+    </div>
+    <p class="error" role="alert" data-error></p>
+    <button class="boton" type="submit">{s.submit}</button>
+</form>
+
+<script is:inline define:vars={{ mensajeOrden: s.errorOrder }}>
+    (function () {
+        var form = document.querySelector("[data-buscador]");
+        if (!form) return;
+        var f = form.elements;
+        var error = form.querySelector("[data-error]");
+        var hoy = new Date();
+        var iso =
+            hoy.getFullYear() +
+            "-" +
+            String(hoy.getMonth() + 1).padStart(2, "0") +
+            "-" +
+            String(hoy.getDate()).padStart(2, "0");
+        f.fecha_recogida.min = iso;
+        f.fecha_devolucion.min = iso;
+
+        function fecha(d, h) {
+            return new Date(d + "T" + h + ":00");
+        }
+
+        f.fecha_recogida.addEventListener("change", function () {
+            f.fecha_devolucion.min = f.fecha_recogida.value || iso;
+        });
+
+        form.addEventListener("submit", function (e) {
+            error.textContent = "";
+            if (!form.checkValidity()) {
+                e.preventDefault();
+                form.reportValidity();
+                return;
+            }
+            var a = fecha(f.fecha_recogida.value, f.hora_recogida.value);
+            var b = fecha(f.fecha_devolucion.value, f.hora_devolucion.value);
+            if (!(b > a)) {
+                e.preventDefault();
+                error.textContent = mensajeOrden;
+            }
+        });
+    })();
+</script>
