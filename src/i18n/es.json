@@ -1,0 +1,35 @@
+{
+    "meta": {
+        "title": "Tropic Rent a Car · Alquiler de coches en Tenerife",
+        "description": "Alquila tu coche en Tenerife con Tropic Rent a Car. Precios claros, seguro incluido y atención directa."
+    },
+    "nav": {
+        "fleet": "Flota",
+        "contact": "Contacto"
+    },
+    "footer": {
+        "rights": "Autos Tropic Canarias S.L."
+    },
+    "search": {
+        "title": "Reserva tu coche",
+        "pickupPlace": "Lugar de recogida",
+        "returnPlace": "Lugar de devolución",
+        "sameAsPickup": "Igual que la recogida",
+        "pickupDate": "Fecha de recogida",
+        "pickupTime": "Hora de recogida",
+        "returnDate": "Fecha de devolución",
+        "returnTime": "Hora de devolución",
+        "submit": "Ver coches y precios",
+        "errorOrder": "La devolución debe ser posterior a la recogida.",
+        "places": {
+            "office": "Oficina Costa del Silencio",
+            "airportSouth": "Aeropuerto Tenerife Sur",
+            "airportNorth": "Aeropuerto Tenerife Norte",
+            "hotel": "Hotel o alojamiento"
+        }
+    },
+    "hero": {
+        "title": "Tu coche en Tenerife, sin sorpresas",
+        "lead": "Seguro a todo riesgo incluido, sin bloqueo en tarjeta y precio total antes de pedir."
+    }
+}

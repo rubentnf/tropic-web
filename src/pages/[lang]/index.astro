@@ -1,0 +1,20 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getDictionary, locales, type Locale } from "../../i18n/utils";
+
+export function getStaticPaths() {
+    return locales.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Locale;
+const t = getDictionary(lang);
+---
+
+<Base lang={lang}>
+    <section class="hero">
+        <div class="contenedor">
+            <h1>{t.hero.title}</h1>
+            <p>{t.hero.lead}</p>
+        </div>
+    </section>
+</Base>

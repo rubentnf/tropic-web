@@ -1,0 +1,81 @@
+---
+import "../styles/global.css";
+import {
+    getDictionary,
+    locales,
+    localizedPath,
+    type Locale,
+} from "../i18n/utils";
+
+interface Props {
+    lang: Locale;
+    title?: string;
+    description?: string;
+    ruta?: string;
+}
+
+const { lang, title, description, ruta = "" } = Astro.props;
+const t = getDictionary(lang);
+---
+
+<!doctype html>
+<html lang={lang}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title ?? t.meta.title}</title>
+        <meta name="description" content={description ?? t.meta.description} />
+        {
+            locales.map((l) => (
+                <link
+                    rel="alternate"
+                    hreflang={l}
+                    href={
+                        Astro.site
+                            ? new URL(localizedPath(l, ruta), Astro.site).href
+                            : localizedPath(l, ruta)
+                    }
+                />
+            ))
+        }
+    </head>
+    <body>
+        <header class="cabecera">
+            <div class="contenedor">
+                <a class="logo" href={localizedPath(lang)}
+                    >TROPIC <span>RENT A CAR</span></a
+                >
+                <nav class="nav" aria-label="Principal">
+                    <a href={localizedPath(lang, "flota")}>{t.nav.fleet}</a>
+                    <a href={localizedPath(lang, "contacto")}>{t.nav.contact}</a
+                    >
+                    <span class="idiomas">
+                        {
+                            locales.map((l, i) => (
+                                <>
+                                    {i > 0 && " · "}
+                                    <a
+                                        href={localizedPath(l, ruta)}
+                                        hreflang={l}
+                                        aria-current={
+                                            l === lang ? "true" : undefined
+                                        }
+                                    >
+                                        {l.toUpperCase()}
+                                    </a>
+                                </>
+                            ))
+                        }
+                    </span>
+                </nav>
+            </div>
+        </header>
+        <main><slot /></main>
+        <footer class="pie">
+            <div class="contenedor">
+                © {new Date().getFullYear()}
+                {t.footer.rights}
+            </div>
+        </footer>
+    </body>
+</html>
