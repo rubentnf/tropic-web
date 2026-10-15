@@ -1,0 +1,399 @@
+{
+    "meta": {
+        "business": "Autos Tropic Canarias S.L. (Tropic Rent a Car)",
+        "source": "Flyer de tarifas facilitado por el cliente (transcrito el 2026-10-14)",
+        "currency": "EUR",
+        "price_unit": "por día de alquiler",
+        "taxes_and_insurance_included": true,
+        "duration_tiers_days": [
+            "1",
+            "2-3",
+            "4-6",
+            "7+"
+        ],
+        "baby_seat_per_day_eur": 5,
+        "baby_seat_types": [
+            "Maxicosi",
+            "silla",
+            "elevador"
+        ],
+        "driver_requirements": {
+            "min_age": 25,
+            "max_age": 75,
+            "min_license_years": 5
+        },
+        "to_confirm_with_client": [
+            "Si el precio del tramo se aplica a cada día del alquiler (p. ej. 5 días en grupo B = 5 x 45 EUR).",
+            "Cómo se cuentan los días (bloques de 24 h desde la recogida) y si hay horas de cortesía o recargo por hora extra.",
+            "Grupo I: la 'X' del flyer en 1 día se interpreta como no disponible (min_days = 2). Confirmar y si existen otros mínimos.",
+            "Recargos no reflejados en el flyer: entrega en aeropuerto/hotel/puerto, fuera de horario, devolución en otro lugar.",
+            "Si las tarifas son las mismas todo el año o hay temporada alta.",
+            "Columna con icono en el flyer (valores 5, 3, 9): confirmar si son puertas o plazas. Las plazas solo aparecen en algunos nombres de modelo.",
+            "Número máximo de sillas infantiles por reserva y si el precio es por silla.",
+            "Ortografía de modelos tal como aparece en el flyer: 'Renault Traffic' (Trafic) y 'Nissan Nv300' (NV300).",
+            "Renault Kangoo aparece en D.1 y en J (7 plazas): confirmar que son versiones distintas."
+        ]
+    },
+    "groups": [
+        {
+            "id": "A",
+            "models": [
+                {
+                    "name": "Fiat 500",
+                    "pax": "2-3"
+                },
+                {
+                    "name": "Fiat Panda",
+                    "pax": null
+                },
+                {
+                    "name": "Hyundai i10",
+                    "pax": null
+                }
+            ],
+            "gearbox": "manual",
+            "air_conditioning": true,
+            "flyer_column_value": 5,
+            "flyer_photo_model": "Fiat Panda",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 60,
+                "2-3": 45,
+                "4-6": 40,
+                "7+": 36
+            }
+        },
+        {
+            "id": "B",
+            "models": [
+                {
+                    "name": "Renault Clio",
+                    "pax": null
+                },
+                {
+                    "name": "Peugeot 208",
+                    "pax": null
+                },
+                {
+                    "name": "Nissan Micra",
+                    "pax": null
+                },
+                {
+                    "name": "Opel Corsa",
+                    "pax": null
+                }
+            ],
+            "gearbox": "manual",
+            "air_conditioning": true,
+            "flyer_column_value": 5,
+            "flyer_photo_model": "Renault Clio",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 65,
+                "2-3": 50,
+                "4-6": 45,
+                "7+": 41
+            }
+        },
+        {
+            "id": "C",
+            "models": [
+                {
+                    "name": "VW Polo",
+                    "pax": null
+                },
+                {
+                    "name": "VW T-Cross",
+                    "pax": null
+                },
+                {
+                    "name": "Citroen C3",
+                    "pax": null
+                },
+                {
+                    "name": "Kia Stonic",
+                    "pax": null
+                }
+            ],
+            "gearbox": "manual",
+            "air_conditioning": true,
+            "flyer_column_value": 5,
+            "flyer_photo_model": "VW T-Cross",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 70,
+                "2-3": 58,
+                "4-6": 53,
+                "7+": 49
+            }
+        },
+        {
+            "id": "D",
+            "models": [
+                {
+                    "name": "Nissan Juke",
+                    "pax": null
+                },
+                {
+                    "name": "VW Golf",
+                    "pax": null
+                },
+                {
+                    "name": "Peugeot 2008",
+                    "pax": null
+                },
+                {
+                    "name": "Suzuki Vitara",
+                    "pax": null
+                }
+            ],
+            "gearbox": "manual",
+            "air_conditioning": true,
+            "flyer_column_value": 5,
+            "flyer_photo_model": "VW Golf",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 80,
+                "2-3": 67,
+                "4-6": 62,
+                "7+": 58
+            }
+        },
+        {
+            "id": "D.1",
+            "models": [
+                {
+                    "name": "Nissan Townstar",
+                    "pax": null
+                },
+                {
+                    "name": "Renault Kangoo",
+                    "pax": null
+                }
+            ],
+            "gearbox": "manual",
+            "air_conditioning": true,
+            "flyer_column_value": 5,
+            "flyer_photo_model": "Renault Kangoo",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 80,
+                "2-3": 67,
+                "4-6": 62,
+                "7+": 58
+            }
+        },
+        {
+            "id": "E",
+            "models": [
+                {
+                    "name": "Skoda Fabia",
+                    "pax": null
+                },
+                {
+                    "name": "VW Polo",
+                    "pax": null
+                },
+                {
+                    "name": "Toyota Yaris",
+                    "pax": null
+                }
+            ],
+            "gearbox": "automatic",
+            "air_conditioning": true,
+            "flyer_column_value": 5,
+            "flyer_photo_model": "VW Polo Aut.",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 70,
+                "2-3": 60,
+                "4-6": 52,
+                "7+": 47
+            }
+        },
+        {
+            "id": "E.1",
+            "models": [
+                {
+                    "name": "Nissan Juke",
+                    "pax": null
+                },
+                {
+                    "name": "VW Taigo",
+                    "pax": null
+                },
+                {
+                    "name": "Skoda Kamiq",
+                    "pax": null
+                }
+            ],
+            "gearbox": "automatic",
+            "air_conditioning": true,
+            "flyer_column_value": 5,
+            "flyer_photo_model": "VW Taigo",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 90,
+                "2-3": 75,
+                "4-6": 70,
+                "7+": 65
+            }
+        },
+        {
+            "id": "F",
+            "models": [
+                {
+                    "name": "Nissan Qashqai",
+                    "pax": null
+                },
+                {
+                    "name": "Nissan X-Trail",
+                    "pax": null
+                }
+            ],
+            "gearbox": "automatic",
+            "air_conditioning": true,
+            "flyer_column_value": 5,
+            "flyer_photo_model": "Nissan Qashqai",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 120,
+                "2-3": 90,
+                "4-6": 78,
+                "7+": 70
+            }
+        },
+        {
+            "id": "G",
+            "models": [
+                {
+                    "name": "Fiat 500 Cabrio",
+                    "pax": 4
+                }
+            ],
+            "gearbox": "manual",
+            "air_conditioning": true,
+            "flyer_column_value": 3,
+            "flyer_photo_model": "Fiat 500 Cabrio",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 75,
+                "2-3": 65,
+                "4-6": 60,
+                "7+": 55
+            }
+        },
+        {
+            "id": "H",
+            "models": [
+                {
+                    "name": "VW T-Roc Cabrio",
+                    "pax": 4
+                }
+            ],
+            "gearbox": "manual_or_automatic",
+            "air_conditioning": true,
+            "flyer_column_value": 3,
+            "flyer_photo_model": "VW T-Roc Cabrio",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 120,
+                "2-3": 90,
+                "4-6": 70,
+                "7+": 65
+            }
+        },
+        {
+            "id": "I",
+            "models": [
+                {
+                    "name": "Audi A5 Cabrio",
+                    "pax": 4
+                }
+            ],
+            "gearbox": "automatic",
+            "air_conditioning": true,
+            "flyer_column_value": 3,
+            "flyer_photo_model": "Audi A5 Cabrio",
+            "min_days": 2,
+            "price_per_day_eur": {
+                "1": null,
+                "2-3": 175,
+                "4-6": 150,
+                "7+": 140
+            }
+        },
+        {
+            "id": "J",
+            "models": [
+                {
+                    "name": "VW Caddy",
+                    "pax": 7
+                },
+                {
+                    "name": "Renault Kangoo",
+                    "pax": 7
+                }
+            ],
+            "gearbox": "manual_or_automatic",
+            "air_conditioning": true,
+            "flyer_column_value": 5,
+            "flyer_photo_model": "VW Caddy",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 125,
+                "2-3": 110,
+                "4-6": 100,
+                "7+": 93
+            }
+        },
+        {
+            "id": "K",
+            "models": [
+                {
+                    "name": "VW Transporter",
+                    "pax": 9
+                },
+                {
+                    "name": "Renault Traffic",
+                    "pax": 9
+                },
+                {
+                    "name": "Nissan Nv300",
+                    "pax": 9
+                }
+            ],
+            "gearbox": "manual",
+            "air_conditioning": true,
+            "flyer_column_value": 5,
+            "flyer_photo_model": "Renault Traffic",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 140,
+                "2-3": 125,
+                "4-6": 115,
+                "7+": 105
+            }
+        },
+        {
+            "id": "L",
+            "models": [
+                {
+                    "name": "Mercedes Vito",
+                    "pax": 9
+                }
+            ],
+            "gearbox": "automatic",
+            "air_conditioning": true,
+            "flyer_column_value": 9,
+            "flyer_photo_model": "Mercedes Vito",
+            "min_days": 1,
+            "price_per_day_eur": {
+                "1": 140,
+                "2-3": 125,
+                "4-6": 115,
+                "7+": 105
+            }
+        }
+    ]
+}
