@@ -1,0 +1,102 @@
+:root {
+    --amarillo: #ffd800;
+    --negro: #111111;
+    --gris: #f4f4f1;
+    --borde: #d9d9d4;
+    --error: #b42318;
+    --radio: 12px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    color: var(--negro);
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+.contenedor {
+    width: min(100% - 2rem, 72rem);
+    margin-inline: auto;
+}
+
+.cabecera {
+    background: var(--negro);
+    color: #fff;
+}
+
+.cabecera .contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: .75rem;
+}
+
+.logo {
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: .02em;
+}
+
+.logo span {
+    color: var(--amarillo);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.idiomas a[aria-current='true'] {
+    color: var(--amarillo);
+    font-weight: 700;
+}
+
+.pie {
+    margin-top: 4rem;
+    padding-block: 2rem;
+    background: var(--gris);
+    font-size: .9rem;
+}
+
+.hero {
+    background: var(--amarillo);
+    padding-block: 2.5rem 6rem;
+}
+
+.hero h1 {
+    font-size: clamp(1.9rem, 6vw, 3.2rem);
+    line-height: 1.1;
+    margin: 0 0 .75rem;
+    max-width: 18ch;
+}
+
+.hero p {
+    margin: 0;
+    max-width: 46ch;
+    font-size: 1.1rem;
+}
